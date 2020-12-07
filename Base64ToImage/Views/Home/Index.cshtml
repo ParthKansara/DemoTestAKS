@@ -1,0 +1,16 @@
+﻿@model Base64ToImage.Models.ImageViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        <label>Base64String :</label>
+        @Html.TextAreaFor(m => m.Base64String, new { @class= "formControl", placeholder="Paste your base64 string here..." })
+    </div>
+    <button class="btn btn-primary" type="submit">Convert</button>
+}
+<div class="text-center">
+    <img src="@Url.Content(Model.ImageUrl)" />
+</div>
